@@ -11,18 +11,30 @@ import CoreLocation
 
 protocol WeatherManagerDelegate {
     func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel)
+    
 }
 
 struct WeatherManager {
+    
+    
     let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=4613cd0a7687f546d96c96617b02cd4c&units=metric"
+    
+    
     var delegate: WeatherManagerDelegate?
     
     func fetchWeather(cityName: String) {
-        let urlString = "\(weatherURL)&q=\(cityName)"
-        performRequest(urlString: urlString)
+        
+        if(cityName.contains(" ")){
+            let newString = cityName.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil)
+            let urlString = "\(weatherURL)&q=\(newString)"
+            performRequest(urlString: urlString)
+        }else{
+            let urlString = "\(weatherURL)&q=\(cityName)"
+            performRequest(urlString: urlString)
+        }
     }
     
-    func fetchWeather(latitude: CLLocationDegrees, lonitute: CLLocationDegrees){
+    mutating func fetchWeather(latitude: CLLocationDegrees, lonitute: CLLocationDegrees){
         let urlString = "\(weatherURL)&lat=\(latitude)&lon=\(lonitute)"
         performRequest(urlString: urlString)
     }
@@ -45,7 +57,6 @@ struct WeatherManager {
                     }
                 }
             }
-            
             //start task
             task.resume()
         }
@@ -55,11 +66,13 @@ struct WeatherManager {
         let decoder = JSONDecoder()
         do{
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
+            
             let id = decodedData.weather[0].id
             let temp = decodedData.main.temp
             let name = decodedData.name
             
             let weather = WeatherModel(conditionId: id, cityName: name, temperature: temp)
+            
             return weather
             
             
@@ -69,4 +82,6 @@ struct WeatherManager {
         }
     }
     
+    
 }
+

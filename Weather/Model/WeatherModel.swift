@@ -38,4 +38,10 @@ struct WeatherModel {
         }
     }
     
+    
+}
+struct WeatherModelDaily{
+    let temp: [Double]
+    let dt_txt: [String]
+    
 }

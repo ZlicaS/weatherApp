@@ -23,7 +23,7 @@
                                 <rect key="frame" x="20" y="44" width="374" height="818"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oqg-XF-bgg">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
+                                        <rect key="frame" x="61" y="0.0" width="313" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIs-E5-aKp">
                                                 <rect key="frame" x="0.0" y="0.5" width="40" height="39"/>
@@ -38,13 +38,13 @@
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search city name" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="MWN-d4-Bi8">
-                                                <rect key="frame" x="50" y="0.0" width="274" height="40"/>
+                                                <rect key="frame" x="50" y="0.0" width="213" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemFillColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="go"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GP2-xE-vPc">
-                                                <rect key="frame" x="334" y="1" width="40" height="38"/>
+                                                <rect key="frame" x="273" y="1" width="40" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="DaC-RD-KJz"/>
                                                     <constraint firstAttribute="width" constant="40" id="QPO-Bg-q7d"/>
@@ -87,18 +87,44 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Belgrade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ii0-5z-Kk2">
-                                        <rect key="frame" x="258.5" y="309.5" width="115.5" height="36"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San Francisco" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ii0-5z-Kk2">
+                                        <rect key="frame" x="192" y="309.5" width="182" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2CV-af-3y1">
-                                        <rect key="frame" x="134" y="355.5" width="240" height="462.5"/>
+                                        <rect key="frame" x="0.0" y="355.5" width="374" height="462.5"/>
+                                        <subviews>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="qIt-wp-UN1">
+                                                <rect key="frame" x="0.0" y="75.5" width="374" height="150"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="j7M-8M-9IE">
+                                                        <rect key="frame" x="10" y="0.0" width="354" height="150"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="j7M-8M-9IE" firstAttribute="top" secondItem="qIt-wp-UN1" secondAttribute="top" id="3hJ-9b-pM2"/>
+                                                    <constraint firstAttribute="bottom" secondItem="j7M-8M-9IE" secondAttribute="bottom" id="510-Pq-6MN"/>
+                                                    <constraint firstItem="j7M-8M-9IE" firstAttribute="centerX" secondItem="qIt-wp-UN1" secondAttribute="centerX" placeholder="YES" id="EX9-OM-Mxi"/>
+                                                    <constraint firstItem="j7M-8M-9IE" firstAttribute="leading" secondItem="qIt-wp-UN1" secondAttribute="leading" constant="10" id="VSs-wk-eZt"/>
+                                                    <constraint firstAttribute="height" constant="150" id="dtQ-8h-szS"/>
+                                                    <constraint firstAttribute="trailing" secondItem="j7M-8M-9IE" secondAttribute="trailing" constant="10" id="qOF-cr-eXc"/>
+                                                    <constraint firstItem="j7M-8M-9IE" firstAttribute="height" secondItem="qIt-wp-UN1" secondAttribute="height" id="rLQ-3N-RWg"/>
+                                                </constraints>
+                                            </scrollView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="qIt-wp-UN1" firstAttribute="centerX" secondItem="2CV-af-3y1" secondAttribute="centerX" id="0Y4-2M-ejX"/>
+                                            <constraint firstItem="qIt-wp-UN1" firstAttribute="leading" secondItem="2CV-af-3y1" secondAttribute="leading" id="TWG-ut-53a"/>
+                                            <constraint firstItem="qIt-wp-UN1" firstAttribute="top" secondItem="2CV-af-3y1" secondAttribute="top" constant="75.5" id="ruO-YJ-KhO"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="oqg-XF-bgg" secondAttribute="trailing" id="C9g-kN-F4u"/>
-                                    <constraint firstItem="oqg-XF-bgg" firstAttribute="leading" secondItem="3iV-aQ-KF7" secondAttribute="leading" id="u3d-jJ-bYU"/>
+                                    <constraint firstAttribute="trailing" secondItem="2CV-af-3y1" secondAttribute="trailing" id="HYK-Qe-RYs"/>
+                                    <constraint firstItem="2CV-af-3y1" firstAttribute="leading" secondItem="3iV-aQ-KF7" secondAttribute="leading" id="gJ3-FU-5Vv"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -118,6 +144,7 @@
                     <connections>
                         <outlet property="cityLabel" destination="Ii0-5z-Kk2" id="UTv-nk-gxn"/>
                         <outlet property="conditionImage" destination="mkk-kN-Zsd" id="iMd-wI-5cQ"/>
+                        <outlet property="horizontalScroll" destination="j7M-8M-9IE" id="aiR-q8-Va8"/>
                         <outlet property="searchTextField" destination="MWN-d4-Bi8" id="6p9-i3-rVy"/>
                         <outlet property="tempLabel" destination="FFV-Hb-GdZ" id="M9J-sl-skg"/>
                     </connections>
@@ -128,7 +155,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="662" height="662"/>
+        <image name="background" width="3456" height="5184"/>
         <image name="location.circle.fill" catalog="system" width="128" height="121"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="sun.max" catalog="system" width="128" height="124"/>
